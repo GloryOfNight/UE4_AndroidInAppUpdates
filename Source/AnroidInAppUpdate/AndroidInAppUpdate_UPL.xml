@@ -1,0 +1,62 @@
+<root xmlns:android="http://schemas.android.com/apk/res/android">
+  <buildGradleAdditions>
+    <insert>     
+      dependencies
+      {
+      implementation 'com.google.android.play:core:1.6.4'
+      }
+    </insert>
+  </buildGradleAdditions>
+  
+  <gameActivityImportAdditions>
+    <insert>
+      import com.epicgames.ue4.OnSuccessListenerImpl;
+      import com.google.android.play.core.appupdate.AppUpdateManager;
+      import com.google.android.play.core.appupdate.AppUpdateManagerFactory;
+      import com.google.android.play.core.appupdate.AppUpdateInfo;
+      import com.google.android.play.core.tasks.Task;
+    </insert>
+  </gameActivityImportAdditions>
+  <gameActivityClassAdditions>
+    <insert>
+      <![CDATA[
+      
+      public AppUpdateManager appUpdateManager = null;
+      
+			public void AndroidThunkJava_RunInAppUpdateCheck()
+			{
+			  RunInAppUpdateCheck();
+			}
+        
+      public void RunInAppUpdateCheck() 
+      {
+        appUpdateManager = AppUpdateManagerFactory.create(this);
+				Task<AppUpdateInfo> appUpdateInfoTask  = appUpdateManager.getAppUpdateInfo();
+
+				OnSuccessListenerImpl successListener = new OnSuccessListenerImpl();
+        successListener.gameActivity = this;
+				appUpdateInfoTask.addOnSuccessListener(successListener);
+      }
+        ]]>
+      
+    </insert>
+  </gameActivityClassAdditions>
+  
+  <gameActivityOnResumeAdditions>	
+    <insert>
+      <![CDATA[
+        		if (appUpdateManager != null)
+	         	{
+			      OnSuccessListenerImpl successListener = new OnSuccessListenerImpl();
+			      successListener.gameActivity = this;
+            successListener.bIsOnResume = true;
+			      appUpdateManager.getAppUpdateInfo().addOnSuccessListener(successListener);
+		        }
+        ]]>
+    </insert>
+  </gameActivityOnResumeAdditions>
+  
+  <prebuildCopies>
+    <copyDir src="$S(PluginDir)/Java" dst="$S(BuildDir)/src/com/epicgames/ue4"/>
+  </prebuildCopies>
+</root>

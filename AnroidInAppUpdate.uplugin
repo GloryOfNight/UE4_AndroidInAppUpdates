@@ -1,0 +1,23 @@
+{
+  "FileVersion": 3,
+  "Version": 1,
+  "VersionName": "1.0",
+  "FriendlyName": "AnroidInAppUpdate",
+  "Description": "Plugin that allow you to integrate in-app updates into you're game.",
+  "Category": "Android",
+  "CreatedBy": "GloryOfNight",
+  "CreatedByURL": "https://github.com/GloryOfNight",
+  "DocsURL": "https://github.com/GloryOfNight/UE4_AndroidInAppUpdates",
+  "MarketplaceURL": "",
+  "SupportURL": "https://github.com/GloryOfNight/UE4_AndroidInAppUpdates",
+  "CanContainContent": false,
+  "IsBetaVersion": false,
+  "Installed": false,
+  "Modules": [
+    {
+      "Name": "AndroidInAppUpdate",
+      "Type": "Runtime",
+      "LoadingPhase": "Default"
+    }
+  ]
+}
