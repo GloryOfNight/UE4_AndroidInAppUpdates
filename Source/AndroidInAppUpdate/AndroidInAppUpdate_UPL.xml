@@ -10,7 +10,7 @@
   
   <gameActivityImportAdditions>
     <insert>
-      import com.epicgames.ue4.OnSuccessListenerImpl;
+      import com.gloryofnight.ue4.OnSuccessListenerImpl;
       import com.google.android.play.core.appupdate.AppUpdateManager;
       import com.google.android.play.core.appupdate.AppUpdateManagerFactory;
       import com.google.android.play.core.appupdate.AppUpdateInfo;
@@ -45,6 +45,7 @@
   <gameActivityOnResumeAdditions>	
     <insert>
       <![CDATA[
+            // Checks that the in-app update is not stalled during 'onResume()'.
         		if (appUpdateManager != null)
 	         	{
 			      OnSuccessListenerImpl successListener = new OnSuccessListenerImpl();

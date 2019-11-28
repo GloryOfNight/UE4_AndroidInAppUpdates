@@ -1,5 +1,6 @@
-package com.epicgames.ue4;
+package com.gloryofnight.ue4;
 
+import com.epicgames.ue4.GameActivity;
 import com.google.android.play.core.appupdate.AppUpdateInfo;
 import com.google.android.play.core.install.model.AppUpdateType;
 import com.google.android.play.core.install.model.UpdateAvailability;

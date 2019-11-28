@@ -9,5 +9,5 @@ class ANDROIDINAPPUPDATE_API UAndroidInAppUpdateBPLib : public UBlueprintFunctio
 
 public:
 	UFUNCTION(BlueprintCallable, Category="Android | AndroidInAppUpdates")
-		static void RunCheckForImmediateUpdate();
+		static void TryRunImmediateUpdate();
 };

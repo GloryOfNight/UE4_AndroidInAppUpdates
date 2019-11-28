@@ -5,7 +5,7 @@
 #include "AndroidApplication.h"
 #endif
 
-void UAndroidInAppUpdateBPLib::RunCheckForImmediateUpdate()
+void UAndroidInAppUpdateBPLib::TryRunImmediateUpdate()
 {
 #if PLATFORM_ANDROID
 	JNIEnv* env = FAndroidApplication::GetJavaEnv();
