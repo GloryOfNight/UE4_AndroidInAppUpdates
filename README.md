@@ -29,3 +29,8 @@ Don't forget, you also need to include "AndroidInAppUpdateBPLib.h" to file.
 # Troubleshoot
 For troubleshoot please check this page of Google Documentation: [Troubleshoot](https://developer.android.com/guide/app-bundle/in-app-updates#troubleshoot).
 If that will not help, please left your problem in Issue section of repository.
+
+# Support
+Feel free to do PR into this repository. Also feel free to use this plugin in you're own developer needs. If you having some troubles with plugin or want some feature use Issues section.
+
+You can support this project by giving it a star.
